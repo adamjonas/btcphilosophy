@@ -7,7 +7,7 @@ on:
 jobs:
   adoc_build:
     runs-on: ubuntu-18.04
-    name: asciidoctor -D docs --backend=html5 -o index.html -a toc2 docs/index.adoc 
+    name: make; mv ./build/btcphilosophy.html ./build/index.html
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
@@ -15,12 +15,12 @@ jobs:
       id: adocbuild
       uses: tonynv/asciidoctor-action@master
       with:
-          program: "asciidoctor -D docs --backend=html5 -o index.html docs/index.adoc"
+          program: "make; mv ./build/btcphilosophy.html ./build/index.html"
     - name: Print execution time
       run: echo "Time ${{ steps.adocbuild.outputs.time }}"
-    - name: Deploy docs to ghpages
+    - name: Deploy build to ghpages
       uses: peaceiris/actions-gh-pages@v3
       with:
         deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
         publish_branch: gh-pages
-        publish_dir: ./
+        publish_dir: ./build
