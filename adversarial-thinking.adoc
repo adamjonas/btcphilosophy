@@ -3,7 +3,7 @@
 image::adversarialthinking-banner.jpg[]
 
 This chapter addresses _adversarial thinking_, a mindset that focuses
-on what can go wrong and how adversaries might operate. We start out
+on what could go wrong and how adversaries might operate. We start out
 by discussing Bitcoin's security assumptions and security model, then
 we talk about how ordinary users can think adversarially to improve
 their self sovereignty and Bitcoin's full node decentralization. We'll
